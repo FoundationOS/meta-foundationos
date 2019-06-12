@@ -16,5 +16,5 @@ BBLAYERS ?= " \
     ${YOCTO_ROOT}/meta-openembedded/meta-networking \
     ${YOCTO_ROOT}/meta-openembedded/meta-python \
     ${YOCTO_ROOT}/meta-foundationos \
-    ${YOCTO_ROOT}/meta-foundationos-qemu/meta-foundationos-qemux86-64 \
+    ${YOCTO_ROOT}/meta-foundationos-qemu/meta-foundationos-qemux86_64 \
 "
