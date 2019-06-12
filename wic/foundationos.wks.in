@@ -1,0 +1,17 @@
+# short-description:
+# long-description:
+
+
+# Note
+# Providing mount point as sourceparams will not update the mount point in fstab.
+# This is because imager plugin updates fstab entries before subdir-as-partition plugin has a chance to update mountpoint
+# Therefore mount points should be specified in base-files fstab
+#part /boot --source bootimg-partition --ondisk ${FOUNDATIONOS_STORAGE_DEVICE} --fstype ${FOUNDATIONOS_BOOT_PART_FSTYPE} --label boot --active --align ${FOUNDATIONOS_PARTITION_ALIGNMENT}  --size ${FOUNDATIONOS_BOOT_PART_SIZE_MB}
+
+part / --source rootfs --ondisk ${FOUNDATIONOS_STORAGE_DEVICE} --fstype ${FOUNDATIONOS_ROOTFS_PART_A_FSTYPE} --fixed-size ${FOUNDATIONOS_CALC_ROOTFS_SIZE}K  --align ${FOUNDATIONOS_PARTITION_ALIGNMENT} --label ${FOUNDATIONOS_ROOTFS_PART_A_LABEL} --exclude "var/"
+part / --source rootfs --ondisk ${FOUNDATIONOS_STORAGE_DEVICE} --fstype ${FOUNDATIONOS_ROOTFS_PART_B_FSTYPE} --fixed-size ${FOUNDATIONOS_CALC_ROOTFS_SIZE}K  --align ${FOUNDATIONOS_PARTITION_ALIGNMENT} --label ${FOUNDATIONOS_ROOTFS_PART_B_LABEL} --exclude "var/"
+
+part /var --source rootfs --ondisk ${FOUNDATIONOS_STORAGE_DEVICE} --fstype ${FOUNDATIONOS_VAR_FSTYPE} --align ${FOUNDATIONOS_PARTITION_ALIGNMENT} --label ${FOUNDATIONOS_VAR_LABEL}
+part /data --source rootfs --ondisk ${FOUNDATIONOS_STORAGE_DEVICE} --fstype ${FOUNDATIONOS_DATA_FSTYPE} --align ${FOUNDATIONOS_PARTITION_ALIGNMENT} --label ${FOUNDATIONOS_DATA_LABEL}
+
+
