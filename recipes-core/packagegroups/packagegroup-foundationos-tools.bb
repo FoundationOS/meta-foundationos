@@ -25,4 +25,5 @@ RDEPENDS_${PN} += "\
     util-linux \
     wget \
     zip \
+    dtc \
 "
