@@ -15,7 +15,7 @@ RDEPENDS_${PN} += "\
     iproute2 \
     less \
     memtester \
-    nano \
+    vim \
     netcat \
     procps \
     rsync \
