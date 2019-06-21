@@ -9,3 +9,4 @@ tmpfs                /var/volatile        tmpfs      defaults              0  0
 
 @FOUNDATIONOS_BOOT_PART@  /boot/bootloader     @FOUNDATIONOS_BOOT_PART_FSTYPE@      defaults        0  0
 @FOUNDATIONOS_VAR_PART@   /var                 @FOUNDATIONOS_FSTYPE@                defaults        0  0
+@FOUNDATIONOS_DATA_PART@  /data                @FOUNDATIONOS_DATA_FSTYPE@           defaults        0  0
