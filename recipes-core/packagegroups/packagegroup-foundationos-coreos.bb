@@ -13,4 +13,5 @@ RDEPENDS_${PN} += "\
 # Packages
 RDEPENDS_${PN} += "\
   data-part \
+  expand-data \
 "

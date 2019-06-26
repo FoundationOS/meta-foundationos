@@ -1,0 +1,16 @@
+#  This file is part of FoundationOS
+#  
+#  The purpose of this file is to resize data partition to size of MMC
+
+[Unit]
+Description=Resize data partition to remaining space of MMC.
+DefaultDependencies=no
+Conflicts=shutdown.target
+ConditionFirstBoot=yes
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c "echo ",+" | sfdisk -N @FOUNDATIONOS_DATA_PART_NUMBER@ --no-reread @FOUNDATIONOS_STORAGE_DEVICE_PATH@"
+
+[Install]
+WantedBy=firsttime-boot.target
