@@ -11,5 +11,8 @@
 part / --source rootfs --ondisk ${FOUNDATIONOS_STORAGE_DEVICE} --fstype ${FOUNDATIONOS_ROOTFS_PART_A_FSTYPE} --fixed-size ${FOUNDATIONOS_CALC_ROOTFS_SIZE}K  --align ${FOUNDATIONOS_PARTITION_ALIGNMENT} --label ${FOUNDATIONOS_ROOTFS_PART_A_LABEL} --exclude "var/"
 part / --source rootfs --ondisk ${FOUNDATIONOS_STORAGE_DEVICE} --fstype ${FOUNDATIONOS_ROOTFS_PART_B_FSTYPE} --fixed-size ${FOUNDATIONOS_CALC_ROOTFS_SIZE}K  --align ${FOUNDATIONOS_PARTITION_ALIGNMENT} --label ${FOUNDATIONOS_ROOTFS_PART_B_LABEL} --exclude "var/"
 
-part /var --source rootfs --ondisk ${FOUNDATIONOS_STORAGE_DEVICE} --fstype ${FOUNDATIONOS_VAR_FSTYPE} --align ${FOUNDATIONOS_PARTITION_ALIGNMENT} --label ${FOUNDATIONOS_VAR_LABEL}
+#part /var --source rootfs --ondisk ${FOUNDATIONOS_STORAGE_DEVICE} --fstype ${FOUNDATIONOS_VAR_FSTYPE} --align ${FOUNDATIONOS_PARTITION_ALIGNMENT} --label ${FOUNDATIONOS_VAR_LABEL} --exclude-path "boot" --exclude-path "etc" --exclude-path "data" --exclude-path "dev" --exclude-path "proc"--exclude-path "sbin" --exclude-path "sys" --exclude-path "home" --exclude-path "media" --exclude-path "lib" --exclude-path "tmp" --exclude-path "usr"
+
+part /var --source rootfs --rootfs-dir ${FOUNDATIONOS_PATH_TO_VAR}  --ondisk ${FOUNDATIONOS_STORAGE_DEVICE} --fstype ${FOUNDATIONOS_VAR_FSTYPE} --align ${FOUNDATIONOS_PARTITION_ALIGNMENT} --label ${FOUNDATIONOS_VAR_LABEL} 
+
 part /data --source dummy --ondisk ${FOUNDATIONOS_STORAGE_DEVICE} --fstype ${FOUNDATIONOS_DATA_FSTYPE} --align ${FOUNDATIONOS_PARTITION_ALIGNMENT} --label ${FOUNDATIONOS_DATA_LABEL} --size ${FOUNDATIONOS_DATA_PART_SIZE}

@@ -88,6 +88,8 @@ FOUNDATIONOS_VAR_FSTYPE ??= "${FOUNDATIONOS_ROOTFS_PART_A_FSTYPE_DEFAULT}"
 FOUNDATIONOS_VAR_LABEL_DEFAULT ??= "var"
 FOUNDATIONOS_VAR_LABEL ??= "${FOUNDATIONOS_VAR_LABEL_DEFAULT}"
 
+FOUNDATIONOS_PATH_TO_VAR = "${IMAGE_ROOTFS}${FOUNDATIONOS_VAR_PART_MOUNT_POINT}"
+
 #-------------------------------------------------------------------------------
 #Reeftas data partition
 #-------------------------------------------------------------------------------
