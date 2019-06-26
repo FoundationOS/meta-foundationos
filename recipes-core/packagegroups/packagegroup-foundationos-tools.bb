@@ -27,3 +27,5 @@ RDEPENDS_${PN} += "\
     zip \
     dtc \
 "
+
+RDEPENDS_${PN} += '${@bb.utils.contains("DISTRO_FEATURES", "systemd", "systemd-analyze", "", d)}'
