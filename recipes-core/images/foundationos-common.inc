@@ -19,6 +19,8 @@ FEATURE_PACKAGES_foundationos ?= "packagegroup-foundationos"
 FEATURE_PACKAGES_foundationos[optional]  ?=  "1"
 FEATURE_PACKAGES_foundationos-tools ?= "packagegroup-foundationos-tools"
 FEATURE_PACKAGES_foundationos-tools[optional]  ?=  "1"
+FEATURE_PACKAGES_foundationos-firsttime-boot ?= "packagegroup-foundationos-firsttime-boot"
+FEATURE_PACKAGES_foundationos-firsttime-boot[optional]  ?=  "1"
 
 set_local_timezone() {
     ln -sf /usr/share/zoneinfo/EST5EDT ${IMAGE_ROOTFS}/etc/localtime

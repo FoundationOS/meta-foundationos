@@ -1,0 +1,6 @@
+[Unit]
+Description=First time boot
+Conflicts=rescue.service rescue.target
+Before=local-fs-pre.target
+ConditionFirstBoot=yes
+AllowIsolate=no

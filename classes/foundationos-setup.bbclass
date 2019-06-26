@@ -120,3 +120,4 @@ FOUNDATIONOS_GROUP="foundationos"
 include foundationos-uboot.inc
 include foundationos-setup-install.inc
 include foundationos-wic.inc
+include foundationos-firsttime-boot.inc
